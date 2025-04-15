@@ -100,7 +100,7 @@ public class MemberService {
     public int updateContent(long id, MemberDTO memberDTO) {
         int result = 0;
         Optional<MemberEntity> entity = repo.findById(id);
-        log.debug("updateContent repo.findByID(id) entity : {}" , entity);
+
         try {
             if(entity.isPresent()) {
                 result = repo.updateContent(memberDTO.getUserId(),
