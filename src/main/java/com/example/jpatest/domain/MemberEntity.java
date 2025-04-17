@@ -30,9 +30,19 @@ public class MemberEntity {
     @Column(name = "password", nullable = false,length = 30)
     private String password;
 
+    @Column(nullable = false)
+    private String role;
+
+    @PrePersist
+    public void prePersist() {
+        if(this.role == null)
+            this.role = "USER";
+    }
+
     public MemberEntity(MemberDTO memberDTO) {
         this.userId = memberDTO.getUserId();
         this.userName = memberDTO.getUserName();
         this.password = memberDTO.getPassword();
+        this.role = memberDTO.getRole();
     }
 }

@@ -20,9 +20,10 @@ public interface MemberRepository extends JpaRepository<MemberEntity, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE tbl_member SET user_id = :userId, user_name = :name, password = :pwd WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE tbl_member SET user_id = :userId, user_name = :name, password = :pwd, role = :role WHERE id = :id", nativeQuery = true)
     int updateContent(@Param("userId") String userId,
                       @Param("name") String userName,
                       @Param("pwd") String password,
+                      @Param("role") String role,
                       @Param("id") Long id);
 }

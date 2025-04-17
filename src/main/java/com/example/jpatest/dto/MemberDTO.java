@@ -14,11 +14,13 @@ public class MemberDTO {
     private String userId;
     private String userName;
     private String password;
+    private String role;
 
     public MemberDTO(MemberEntity entity) {
         this.id = entity.getId();
         this.userId = entity.getUserId();
         this.userName = entity.getUserName();
         this.password = entity.getPassword();
+        this.role = entity.getRole();
     }
 }

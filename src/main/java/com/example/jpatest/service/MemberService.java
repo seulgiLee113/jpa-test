@@ -106,6 +106,7 @@ public class MemberService {
                 result = repo.updateContent(memberDTO.getUserId(),
                         memberDTO.getUserName(),
                         memberDTO.getPassword(),
+                        memberDTO.getRole(),
                         id);
                 return 1;
             }
